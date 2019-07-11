@@ -1,4 +1,6 @@
 const fs = require('fs');
+const filename = 'newTextFile.txt';
+const directory = './path/';
 
 module.exports.ls = () => {
   fs.readdir('./', (err, files) => {
