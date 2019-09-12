@@ -12,11 +12,11 @@ module.exports.ls = () => {
   });
 };
 
-module.exports.touch = () => {
+module.exports.touch = (filename) => {
   fs.closeSync(fs.openSync(filename, 'a'));
 };
 
-module.exports.mkdir = () => {
+module.exports.mkdir = (directory) => {
   if (!fs.existsSync(directory)) {
     fs.mkdirSync(directory);
     console.log('Directory created');
