@@ -12,15 +12,17 @@ module.exports.ls = () => {
   });
 };
 
-module.exports.touch = (filename) => {
+module.exports.touch = () => {
   fs.closeSync(fs.openSync(filename, 'a'));
+   console.log(filename);
 };
 
-module.exports.mkdir = (directory) => {
+module.exports.mkdir = () => {
   if (!fs.existsSync(directory)) {
     fs.mkdirSync(directory);
     console.log('Directory created');
   } else {
     console.log('Directory already exists');
   }
+   console.log(directory);
 };
