@@ -13,16 +13,17 @@ module.exports.ls = () => {
 };
 
 module.exports.touch = () => {
-  fs.closeSync(fs.openSync(filename, 'a'));
-   console.log(filename);
+  fs.writeFile('terminal-command.txt', 'touchie touchie!', 'utf8', (err) => {
+    if (err) throw err;
+
+    console.log('success')
+  });
 };
 
 module.exports.mkdir = () => {
-  if (!fs.existsSync(directory)) {
-    fs.mkdirSync(directory);
-    console.log('Directory created');
-  } else {
-    console.log('Directory already exists');
-  }
-   console.log(directory);
+  fs.mkdir('./test', (err) => {
+    if (err) throw err;
+
+    console.log('sucess')
+  });
 };
